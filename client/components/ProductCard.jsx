@@ -35,7 +35,7 @@ const ProductCard = ({
           <Image
             source={{ uri: image }}
             style={{
-              width: "110%",
+              width: "100%",
               height: 200,
               borderTopLeftRadius: 20,
               borderTopRightRadius: 20,

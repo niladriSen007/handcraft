@@ -7,9 +7,27 @@ import { Avatar } from "react-native-paper";
 const Footer = ({ activeRoute }) => {
   const navigateTo = useNavigation();
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
-  const navigationHandler = (key) => {};
+  const loading = false;
+
+  const navigationHandler = (key) => {
+    switch (key) {
+      case 0:
+        navigateTo.navigate("home");
+        break;
+      case 1:
+        navigateTo.navigate("cart");
+        break;
+      case 2:
+        if (isAuthenticated) navigateTo.navigate("profile");
+        else navigateTo.navigate("login");
+        break;
+      default:
+        navigateTo.navigate("home");
+        break;
+    }
+  };
 
   const avatarIcon = {
     style: { backgroundColor: colors.color2, margin: 2 },
@@ -18,7 +36,7 @@ const Footer = ({ activeRoute }) => {
   };
 
   return (
-    <View
+    ( !loading && <View
       style={{
         backgroundColor: colors.color1,
         borderTopLeftRadius: 120,
@@ -36,7 +54,7 @@ const Footer = ({ activeRoute }) => {
           onPress={() => navigationHandler(1)}
         >
           <Avatar.Icon
-          {...avatarIcon}
+            {...avatarIcon}
             icon={activeRoute === "cart" ? "shopping" : "shopping-outline"}
           />
         </TouchableOpacity>
@@ -46,7 +64,7 @@ const Footer = ({ activeRoute }) => {
           onPress={() => navigationHandler(2)}
         >
           <Avatar.Icon
-          {...avatarIcon}
+            {...avatarIcon}
             icon={activeRoute === "profile" ? "account" : "account-outline"}
           />
         </TouchableOpacity>
@@ -85,7 +103,7 @@ const Footer = ({ activeRoute }) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </View>)
   );
 };
 
