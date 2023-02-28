@@ -6,6 +6,7 @@ import { Avatar, Button } from "react-native-paper";
 import SearchModal from "../components/SearchModal";
 import ProductCard from "../components/ProductCard";
 import { useNavigation } from "@react-navigation/native";
+import Footer from "../components/Footer";
 
 
 const categories = [
@@ -19,12 +20,12 @@ const categories = [
 const products = [
   {
     _id: 1,
-    name: "Elephant made by soil and gum",
+    name: "Handmade night lamp",
     price: 1400,
     stock:12,
     images: [
       {
-        url: "https://www.artzolo.com/sites/default/files/uploads/multi/1/largest/WAE506_Colored_Jumbo_Elephant_Statue.jpg",
+        url: "https://cdn.shopify.com/s/files/1/0036/8757/9760/products/Handcrafted-Table-Lamp-Black-Earthen-Lamp-Writings-On-The-Wall-537_1024x1024.jpg?v=1675094771",
       },
       
     ],
@@ -104,7 +105,7 @@ const Home = () => {
         <Header />
         <View
           style={{
-            paddingTop: 70,
+            paddingTop: 52,
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
@@ -187,6 +188,7 @@ const Home = () => {
           </ScrollView>
         </View>
       </View>
+      <Footer activeRoute={"home"}/>
     </>
   );
 };

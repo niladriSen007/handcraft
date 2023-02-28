@@ -31,7 +31,8 @@ const SearchItem = ({imgSrc,name,price,handler}) => {
             top:10,
             left:10,
             borderTopLeftRadius:20,
-            borderBottomRightRadius:20
+            borderBottomRightRadius:20,
+            elevation:5
             }}/>
             <View style={{
                 width:200,
